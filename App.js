@@ -1,88 +1,118 @@
-import { StyleSheet, Text, TouchableOpacity, Image, ImageBackground, Button, Alert, Linking, View } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Image, ImageBackground, Button, Linking } from 'react-native';
+
 
 export default function App() {
+  
   return (
-    <ImageBackground 
-      source={require('./assets/a.jpg')} 
+    
+    <ImageBackground
+      resizeMode="stretch"
+      source={require('./assets/a.jpg')}
       style={styles.container}
     >
-      {/* Título */}
-      <Text style={styles.titulo}>Sistema Solar</Text>
+      <Image source={require('./assets/t.png')} style={styles.imagemT} />
+      <Text style={styles.subtitulo}>Clique nos planetas para saber uma curiosidade!</Text>
 
-      {/* Grade com os planetas */}
-      <View style={styles.grid}>
-        {/* Mercúrio */}
-        <View style={styles.card}>
-          <TouchableOpacity style={styles.box} onPress={() => Alert.alert("Mercúrio", "O menor planeta e o mais próximo do Sol.")}>
-            <Image source={require('./assets/mercurio.png')} style={styles.img}/>
-            <Text style={styles.texto}>Mercúrio</Text>
-          </TouchableOpacity>
-          <Button title="Saber mais" onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/Merc%C3%BArio_(planeta)")} />
-        </View>
+      <View style={styles.viewcontainer}>
+      
+      <TouchableOpacity style={styles.box} 
+        onPress={() => alert("Mercúrio\nO menor planeta e o mais próximo do Sol.")}>
+        <Image source={require('./assets/mercurio.png')} style={styles.imagem} />
+        <Text style={styles.texto}>Mercúrio</Text>
+        <TouchableOpacity
+           style={styles.link}
+           onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/Merc%C3%BArio_(planeta)")}
+         >
+           <Text style={styles.linkText}>Saber mais</Text>
+         </TouchableOpacity>
+      </TouchableOpacity>
 
-        {/* Vênus */}
-        <View style={styles.card}>
-          <TouchableOpacity style={styles.box} onPress={() => Alert.alert("Vênus", "Planeta mais quente, com atmosfera densa.")}>
-            <Image source={require('./assets/venus.png')} style={styles.img}/>
-            <Text style={styles.texto}>Vênus</Text>
-          </TouchableOpacity>
-          <Button title="Saber mais" onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/V%C3%A9nus_(planeta)")} />
-        </View>
+      <TouchableOpacity style={styles.box} 
+        onPress={() => alert("Vênus\nPlaneta mais quente, com atmosfera densa.")}>
+        <Image source={require('./assets/venus.png')} style={styles.imagem} />
+        <Text style={styles.texto}>Vênus</Text>
+       <TouchableOpacity
+           style={styles.link}
+           onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/V%C3%A9nus_(planeta)")}
+         >
+           <Text style={styles.linkText}>Saber mais</Text>
+         </TouchableOpacity>
+      </TouchableOpacity>
 
-        {/* Terra */}
-        <View style={styles.card}>
-          <TouchableOpacity style={styles.box} onPress={() => Alert.alert("Terra", "Nosso planeta, único com vida conhecida.")}>
-            <Image source={require('./assets/terra.png')} style={styles.img}/>
-            <Text style={styles.texto}>Terra</Text>
-          </TouchableOpacity>
-          <Button title="Saber mais" onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/Terra")} />
-        </View>
+      <TouchableOpacity style={styles.box} 
+        onPress={() => alert("Terra\nNosso planeta, único com vida conhecida.")}>
+        <Image source={require('./assets/terra.png')} style={styles.imagem} />
+        <Text style={styles.texto}>Terra</Text>
+        <TouchableOpacity
+           style={styles.link}
+           onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/Terra")}
+         >
+           <Text style={styles.linkText}>Saber mais</Text>
+         </TouchableOpacity>
+      </TouchableOpacity>
 
-        {/* Marte */}
-        <View style={styles.card}>
-          <TouchableOpacity style={styles.box} onPress={() => Alert.alert("Marte", "Conhecido como planeta vermelho.")}>
-            <Image source={require('./assets/marte.png')} style={styles.img}/>
-            <Text style={styles.texto}>Marte</Text>
-          </TouchableOpacity>
-          <Button title="Saber mais" onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/Marte_(planeta)")} />
-        </View>
+      <TouchableOpacity style={styles.box} 
+        onPress={() => alert("Marte\nConhecido como planeta vermelho.")}>
+        <Image source={require('./assets/marte.png')} style={styles.imagem} />
+        <Text style={styles.texto}>Marte</Text>
+       <TouchableOpacity
+           style={styles.link}
+           onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/Marte_(planeta)")}
+         >
+           <Text style={styles.linkText}>Saber mais</Text>
+         </TouchableOpacity>
+      </TouchableOpacity>
 
-        {/* Júpiter */}
-        <View style={styles.card}>
-          <TouchableOpacity style={styles.box} onPress={() => Alert.alert("Júpiter", "O maior planeta do sistema solar.")}>
-            <Image source={require('./assets/jupiter.png')} style={styles.img}/>
-            <Text style={styles.texto}>Júpiter</Text>
-          </TouchableOpacity>
-          <Button title="Saber mais" onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/J%C3%BApiter_(planeta)")} />
-        </View>
+      <TouchableOpacity style={styles.box} 
+        onPress={() => alert("Júpiter\nO maior planeta do sistema solar.")}>
+        <Image source={require('./assets/jupiter.png')} style={styles.imagem} />
+        <Text style={styles.texto}>Júpiter</Text>
+         <TouchableOpacity
+           style={styles.link}
+           onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/J%C3%BApiter_(planeta)")}
+         >
+           <Text style={styles.linkText}>Saber mais</Text>
+         </TouchableOpacity>
+      </TouchableOpacity>
 
-        {/* Saturno */}
-        <View style={styles.card}>
-          <TouchableOpacity style={styles.box} onPress={() => Alert.alert("Saturno", "Famoso por seus anéis brilhantes.")}>
-            <Image source={require('./assets/saturno.png')} style={styles.img}/>
-            <Text style={styles.texto}>Saturno</Text>
-          </TouchableOpacity>
-          <Button title="Saber mais" onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/Saturno_(planeta)")} />
-        </View>
+      <TouchableOpacity style={styles.box} 
+        onPress={() => alert("Saturno\nFamoso por seus anéis brilhantes.")}>
+        <Image source={require('./assets/saturno.png')} style={styles.imagem} />
+        <Text style={styles.texto}>Saturno</Text>
+          <TouchableOpacity
+           style={styles.link}
+           onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/Saturno_(planeta)")}
+         >
+           <Text style={styles.linkText}>Saber mais</Text>
+         </TouchableOpacity>
+      </TouchableOpacity>
 
-        {/* Urano */}
-        <View style={styles.card}>
-          <TouchableOpacity style={styles.box} onPress={() => Alert.alert("Urano", "Gigante de gelo que gira de lado.")}>
-            <Image source={require('./assets/urano.png')} style={styles.img}/>
-            <Text style={styles.texto}>Urano</Text>
-          </TouchableOpacity>
-          <Button title="Saber mais" onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/Urano_(planeta)")} />
-        </View>
+      <TouchableOpacity style={styles.box} 
+        onPress={() => alert("Urano\nGigante de gelo que gira de lado.")}>
+        <Image source={require('./assets/urano.png')} style={styles.imagem} />
+        <Text style={styles.texto}>Urano</Text>
+        <TouchableOpacity
+           style={styles.link}
+           onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/Urano_(planeta)")}
+         >
+           <Text style={styles.linkText}>Saber mais</Text>
+         </TouchableOpacity>
+      </TouchableOpacity>
 
-        {/* Netuno */}
-        <View style={styles.card}>
-          <TouchableOpacity style={styles.box} onPress={() => Alert.alert("Netuno", "O planeta mais distante do Sol.")}>
-            <Image source={require('./assets/netuno.png')} style={styles.img}/>
-            <Text style={styles.texto}>Netuno</Text>
-          </TouchableOpacity>
-          <Button title="Saber mais" onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/Netuno_(planeta)")} />
-        </View>
-      </View>
+      <TouchableOpacity style={styles.box} 
+        onPress={() => alert("Netuno\nO planeta mais distante do Sol.")}>
+        <Image source={require('./assets/netuno.png')} style={styles.imagem} />
+        <Text style={styles.texto}>Netuno</Text>
+         <TouchableOpacity
+           style={styles.link}
+           onPress={() => Linking.openURL("https://pt.wikipedia.org/wiki/Netuno_(planeta)")}
+         >
+           <Text style={styles.linkText}>Saber mais</Text>
+         </TouchableOpacity>
+      </TouchableOpacity>
+
+    </View>
+
     </ImageBackground>
   );
 }
@@ -90,45 +120,61 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#001d3d',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingTop: 40,
-  },
-  titulo: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 15,
-  },
-  grid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',    // permite quebrar em linhas
     justifyContent: 'center',
+    alignContent: 'space-evenly',
+    paddingTop: 50,
+    color: '#8ff1f6ff'
   },
-  card: {
-    margin: 5,
+  viewcontainer: {
+    flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    alignContent: 'space-evenly',
+    rowGap: 30,
+    width: "100%",
+
   },
-  box: {
-    backgroundColor: '#57a0ff84',
-    width: 100,   // menor largura
-    height: 120,  // menor altura
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-    borderRadius: 12,
-    padding: 6,
-    marginBottom: 4,
-  },
-  img: {
-    width: 40,
-    height: 40,
-    resizeMode: 'contain',
-  },
-  texto: {
+  subtitulo: {
     fontSize: 14,
     color: '#fff',
+    fontWeight: 'bold'
+  },
+  box: {
+    backgroundColor: '#4b4e5284',
+    width: 120,
+    height: 120,
+    alignItems: 'center',    
+    justifyContent: 'center',
+    borderRadius: 20,
+  },
+  link:{
+   marginTop: 10,
+   backgroundColor: '#38bdff68',
+   paddingVertical: 3,
+   paddingHorizontal: 8,
+   borderRadius: 10,
+  },
+  linkText:{
+    color: '#ede8e8ff',
+    fontWeight: 'bold',
+    fontSize: 14,
+  },
+  texto: {
+    fontSize: 18,
+    color: '#fff',
     fontWeight: '700',
-    textAlign: 'center',
+  },
+  imagem: {
+    width: 50,
+    height: 50,
+    marginBottom: 5,
+    resizeMode: 'contain'
+  },
+  imagemT: {
+    width: 190,
+    height: 160,
   },
 });
