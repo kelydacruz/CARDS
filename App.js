@@ -3,7 +3,6 @@ import { StyleSheet, Text, TouchableOpacity, Image, ImageBackground, Button, Ale
 export default function App() {
   return (
     <ImageBackground 
-      resizeMode='stretch' 
       source={require('./assets/a.jpg')} 
       style={styles.container}
     >
